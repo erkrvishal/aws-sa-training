@@ -1,7 +1,8 @@
-FROM centos:centos7
-MAINTAINER FelineInc
-RUN yum -y install httpd
+FROM ubuntu:latest
+MAINTAINER Vishal
+RUN apt update -y && apt install apache2 -y
+RUN service apache2 start
 COPY index.html containercat.jpg /var/www/html/
-ENTRYPOINT ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+ENTRYPOINT ["apache2ctl", "-D", "FOREGROUND"]
 EXPOSE 80
 
