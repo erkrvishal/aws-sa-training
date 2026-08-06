@@ -13,10 +13,9 @@ This document will help you to configure docker in EC2 instance and deploy an ap
 
 - Login to EC2 instances created for this Lab and run the below commands.
 ``` bash
-sudo amazon-linux-extras install docker
+sudo yum install docker git -y
 sudo service docker start
 sudo usermod -a -G docker ec2-user
-sudo yum install git
 ```
 - After successfull execution of the above command, close the terminal/cmd and start the new terminal/cmd and execute the below commands.
 
